@@ -30,7 +30,8 @@ export function DeveloperTeaser() {
                   Quick Start Integration
                 </CardTitle>
                 <CardDescription className="text-slate-400">
-                  Wrap your MCP server with the GuardiAgent sandbox in seconds
+                  Wrap your MCP server with the GuardiAgent sandbox in seconds. Seemlessly integrate with the OpenAI Agent
+                  SDK.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex grow">
@@ -69,16 +70,16 @@ async def main():
                   Architecture Overview (simple)
                 </CardTitle>
                 <CardDescription className="text-slate-400">
-                  Understanding the GuardiAgent sandbox architecture
+                  The guardian that secures the smallest common part in agentic AI: the MCP server
                 </CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="bg-[#1e1e1e] p-4 rounded-lg text-center">
+              <CardContent className="flex grow">
+                <div className="bg-[#1e1e1e] p-4 rounded-lg align-middle justify-center flex grow">
                   <Image
                     src="/architecture.svg"
                     alt="Sandbox Architecture"
-                    width={400}
-                    height={600}
+                    width={450}
+                    height={370}
                     className="rounded inline-block"
                   />
                 </div>
@@ -86,74 +87,12 @@ async def main():
             </Card>
           </div>
 
-          {/* <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-lg">Permission System</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                  [CONTENT: Explain granular permission controls - filesystem access levels, network whitelisting,
-                  environment variable isolation, and resource quotas]
-                </p>
-                <pre className="bg-slate-950 p-3 rounded text-xs font-mono text-green-400">
-                  {`permissions: {
-  filesystem: {
-    read: ['/data'],
-    write: ['/tmp']
-  },
-  network: {
-    allow: ['*.api.com'],
-    deny: ['*']
-  }
-}`}
-                </pre>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-lg">Threat Detection</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                  [CONTENT: Describe real-time monitoring of system calls, pattern matching for suspicious behavior, ML-based
-                  anomaly detection, and automatic response]
-                </p>
-                <pre className="bg-slate-950 p-3 rounded text-xs font-mono text-green-400">
-                  {`onThreat: (threat) => {
-  if (threat.severity > 7) {
-    sandbox.terminate()
-    alert.send(threat)
-  }
-}`}
-                </pre>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-lg">Audit Logging</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-slate-400 text-sm mb-4 leading-relaxed">
-                  [CONTENT: Detail comprehensive logging of all operations, exportable audit trails, compliance reporting,
-                  and integration with SIEM systems]
-                </p>
-                <pre className="bg-slate-950 p-3 rounded text-xs font-mono text-green-400">
-                  {`const logs = await sandbox
-  .getLogs({
-    timeRange: '24h',
-    severity: 'high'
-  })`}
-                </pre>
-              </CardContent>
-            </Card>
-          </div> */}
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/developers">
-              <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-slate-900 cursor-pointer">
+              <Button
+                size="lg"
+                className="bg-secondary hover:bg-primary/90 ext-secondary-foreground hover:text-primary-foreground cursor-pointer"
+              >
                 <BookOpen className="mr-2 h-5 w-5" />
                 Read The Details
               </Button>

@@ -13,7 +13,6 @@ export default function Home() {
       <Vision />
       <DeveloperTeaser />
       <ResearcherTeaser />
-      {/* <ConsultingSection /> */}
       <NewsletterSection />
     </main>
   );

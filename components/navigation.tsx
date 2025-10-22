@@ -22,10 +22,11 @@ export function Navigation() {
           <Link href="/researchers" className="text-foreground hover:text-primary transition-colors">
             Research
           </Link>
-          {/* <Link href="/#consulting" className="text-foreground hover:text-primary transition-colors">
-            Consulting
-          </Link> */}
-          <Button size="sm">Get Started</Button>
+          <Link href="/#newsletter" className="text-foreground hover:text-primary transition-colors">
+            <Button className="cursor-pointer" size="sm">
+              Stay In Touch
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>

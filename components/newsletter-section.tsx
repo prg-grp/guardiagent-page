@@ -26,7 +26,7 @@ export function NewsletterSection() {
   };
 
   return (
-    <section className="py-24 bg-muted/30">
+    <section id="newsletter" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <Card className="border-2 border-primary/20 shadow-xl bg-background">

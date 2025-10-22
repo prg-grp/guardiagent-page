@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BrainCog, CheckCircle, Lock, Package, Shield, UserCheck2 } from 'lucide-react';
+import { BrainCog, Eye, Lock, Package, Shield, UserCheck2 } from 'lucide-react';
 
 const features = [
   {
@@ -34,9 +34,10 @@ const features = [
       'Coming soon: Download trusted, verified, and certified MCP servers and AI agent applications from our curated app store.',
   },
   {
-    icon: CheckCircle,
-    title: 'TODO',
-    description: 'SOME THIRD THING',
+    icon: Eye,
+    title: 'Easy Observability',
+    description:
+      'Coming soon: Know what servers are running on your machine and have a trusted and secure execution environment for your use-cases.',
   },
 ];
 

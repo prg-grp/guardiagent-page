@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Codesandbox, Lock, Shield } from 'lucide-react';
+import { Codesandbox, GraduationCap, Lock, Shield } from 'lucide-react';
+import Link from 'next/link';
 
 export function HeroSection() {
   return (
@@ -34,17 +35,22 @@ export function HeroSection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="text-lg px-8 py-6 bg-primary hover:bg-primary/90">
-              <Lock className="mr-2 h-5 w-5" />
-              TODO
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
-            >
-              TODO
-            </Button>
+            <Link href="/#developers">
+              <Button size="lg" className="text-lg px-8 py-6 cursor-pointer bg-primary hover:bg-primary/90">
+                <Lock className="mr-2 h-5 w-5" />
+                Show Me How
+              </Button>
+            </Link>
+            <Link href="/#research">
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 py-6 cursor-pointer bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20"
+              >
+                <GraduationCap className="mr-2 h-5 w-5" />
+                Show The Research
+              </Button>
+            </Link>
           </div>
 
           {/* Trust indicators */}

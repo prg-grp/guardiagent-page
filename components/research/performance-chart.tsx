@@ -15,13 +15,13 @@ export default function PerformanceChart() {
       <BarChart data={performanceData}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="metric" />
-        <YAxis label={{ value: 'Relative Performance (%)', angle: -90, position: 'insideLeft' }} />
+        <YAxis label={{ value: 'Average Time in Milliseconds', angle: -90, position: 'insideBottomLeft' }} />
         <Tooltip />
         <Legend />
-        <Bar dataKey="macNative" fill="var(--chart-1)" name="macOS - native" />
+        <Bar dataKey="macNative" fill="var(--chart-4)" name="macOS - native" />
         <Bar dataKey="macSandbox" fill="var(--chart-2)" name="macOS - sandboxed" />
         <Bar dataKey="debianNative" fill="var(--chart-3)" name="debian - native" />
-        <Bar dataKey="debianSandbox" fill="var(--chart-4)" name="debian - sandboxed" />
+        <Bar dataKey="debianSandbox" fill="var(--chart-1)" name="debian - sandboxed" />
       </BarChart>
     </ResponsiveContainer>
   );
