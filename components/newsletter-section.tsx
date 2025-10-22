@@ -1,12 +1,11 @@
 'use client';
 
-import type React from 'react';
-
+import { subscribeToNewsletter } from '@/app/lib/actions';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
-import { CheckCircle, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useState } from 'react';
 
 export function NewsletterSection() {
@@ -14,16 +13,7 @@ export function NewsletterSection() {
   const [interests, setInterests] = useState({
     research: true,
     product: true,
-    consulting: true,
   });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle newsletter subscription
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-  };
 
   return (
     <section id="newsletter" className="py-24 bg-muted/30">
@@ -36,13 +26,15 @@ export function NewsletterSection() {
               </div>
               <CardTitle className="text-3xl md:text-4xl mb-2">Stay Informed</CardTitle>
               <CardDescription className="text-lg">
-                Get the latest updates on AI agent security, research findings, and product releases.
+                Get the latest updates on AI agent security, research findings, and software releases.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form action={subscribeToNewsletter} className="space-y-6">
                 <div>
                   <Input
+                    id="email"
+                    name="email"
                     type="email"
                     placeholder="Enter your email address"
                     value={email}
@@ -58,6 +50,7 @@ export function NewsletterSection() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="research"
+                        name="research"
                         checked={interests.research}
                         onCheckedChange={(checked) => setInterests({ ...interests, research: checked as boolean })}
                       />
@@ -69,43 +62,25 @@ export function NewsletterSection() {
                     <div className="flex items-center space-x-2">
                       <Checkbox
                         id="product"
+                        name="product"
                         checked={interests.product}
                         onCheckedChange={(checked) => setInterests({ ...interests, product: checked as boolean })}
                       />
                       <label htmlFor="product" className="text-sm cursor-pointer">
-                        <span className="font-semibold">Product News</span> - New features, releases, and technical updates
-                      </label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Checkbox
-                        id="consulting"
-                        checked={interests.consulting}
-                        onCheckedChange={(checked) => setInterests({ ...interests, consulting: checked as boolean })}
-                      />
-                      <label htmlFor="consulting" className="text-sm cursor-pointer">
-                        <span className="font-semibold">Consulting Services</span> - Security insights, best practices, and
-                        case studies
+                        <span className="font-semibold">Software News</span> - New features, releases, and technical updates
+                        of GuardiAgent and AgentBound
                       </label>
                     </div>
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={submitted}>
-                  {submitted ? (
-                    <>
-                      <CheckCircle className="mr-2 h-5 w-5" />
-                      Subscribed!
-                    </>
-                  ) : (
-                    <>
-                      <Mail className="mr-2 h-5 w-5" />
-                      Subscribe to Newsletter
-                    </>
-                  )}
+                <Button type="submit" size="lg" className="w-full" disabled={!(interests.product || interests.research)}>
+                  <Mail className="mr-2 h-5 w-5" />
+                  Subscribe to Newsletter
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center leading-relaxed">
-                  By subscribing, you agree to receive emails from AgentShield. You can unsubscribe at any time. We respect
+                  By subscribing, you agree to receive emails from GuardiAGent. You can unsubscribe at any time. We respect
                   your privacy.
                 </p>
               </form>
