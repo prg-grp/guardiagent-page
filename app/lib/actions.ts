@@ -38,13 +38,5 @@ export async function subscribeToNewsletter(initialState: ActionState, formData:
       ],
     });
 
-  const delay = () => new Promise((resolve) => setTimeout(resolve, 2000));
-
-  await delay();
-
-  console.log(result.response.status);
-  console.log(result.response.statusText);
-  console.log(JSON.stringify(result.body, null, 2));
-
   return initialState;
 }
