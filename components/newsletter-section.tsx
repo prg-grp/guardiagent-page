@@ -5,15 +5,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Input } from '@/components/ui/input';
-import { Mail } from 'lucide-react';
-import { useState } from 'react';
+import { LoaderCircle, Mail } from 'lucide-react';
+import { useActionState, useState } from 'react';
 
 export function NewsletterSection() {
-  const [email, setEmail] = useState('');
   const [interests, setInterests] = useState({
     research: true,
     product: true,
   });
+
+  const [state, action, pending] = useActionState(subscribeToNewsletter, {});
 
   return (
     <section id="newsletter" className="py-24 bg-muted/30">
@@ -30,15 +31,13 @@ export function NewsletterSection() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form action={subscribeToNewsletter} className="space-y-6">
+              <form action={action} className="space-y-6">
                 <div>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     placeholder="Enter your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
                     required
                     className="h-12 text-lg"
                   />
@@ -74,13 +73,26 @@ export function NewsletterSection() {
                   </div>
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={!(interests.product || interests.research)}>
-                  <Mail className="mr-2 h-5 w-5" />
-                  Subscribe to Newsletter
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full cursor-pointer"
+                  disabled={!(interests.product || interests.research) || pending}
+                >
+                  {pending ? (
+                    <>
+                      <LoaderCircle className="mr-2 h-5 w-5 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      <Mail className="mr-2 h-5 w-5" />
+                      Subscribe to Newsletter
+                    </>
+                  )}
                 </Button>
 
                 <p className="text-xs text-muted-foreground text-center leading-relaxed">
-                  By subscribing, you agree to receive emails from GuardiAGent. You can unsubscribe at any time. We respect
+                  By subscribing, you agree to receive emails from GuardiAgent. You can unsubscribe at any time. We respect
                   your privacy.
                 </p>
               </form>
