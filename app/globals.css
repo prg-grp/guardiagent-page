@@ -124,6 +124,31 @@
   }
 }
 
+@layer utilities {
+  .content-grid {
+    @apply grid;
+    @apply grid-cols-1;
+  }
+
+  .content-grid section {
+    @apply py-24;
+    @apply px-12;
+  }
+
+  .content-grid section:nth-child(3n + 1) {
+    @apply bg-background;
+  }
+
+  .content-grid section:nth-child(3n + 2) {
+    @apply bg-muted/80;
+  }
+
+  .content-grid section:nth-child(3n + 3) {
+    @apply bg-slate-900;
+    @apply text-white;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
