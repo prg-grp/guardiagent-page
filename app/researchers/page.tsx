@@ -1,3 +1,5 @@
+import { Code } from '@/components/code';
+import dedent from 'dedent-js';
 import { GraduationCap } from 'lucide-react';
 
 export default function Researchers() {
@@ -39,6 +41,13 @@ export default function Researchers() {
       <div className="content-grid">
         <section>
           <h2>Why you need GuardiAgent and AgentBound</h2>
+          <Code
+            lang="python"
+            code={dedent`foo #[!code anchor=asdf]
+          foo // [!code anchor=asdf]
+          foo //  [!code anchor=asdf]
+          foo //   [!code anchor=asdf]`}
+          />
         </section>
         <section>
           <h2>Quick Start</h2>

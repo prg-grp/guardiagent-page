@@ -74,7 +74,7 @@ export function IncidentShowcase() {
           <div className="mt-12 p-6 bg-muted rounded-lg border-4 border-primary/20 hover:border-primary transition-colors">
             <p className="text-lg font-semibold mb-2">Don't let this happen to you.</p>
             <p className="text-muted-foreground">
-              AgentShield provides enterprise-grade sandboxing to isolate and protect your systems from rogue AI agents and
+              GuardiAgent provides enterprise-grade sandboxing to isolate and protect your systems from rogue AI agents and
               compromised MCP servers.
             </p>
           </div>

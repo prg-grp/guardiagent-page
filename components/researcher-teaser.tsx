@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap } from 'lucide-react';
 import Link from 'next/link';
 import PerformanceChart from './research/performance-chart';
@@ -43,12 +43,13 @@ export function ResearcherTeaser() {
 
           <Card className="mb-12">
             <CardHeader>
-              <CardTitle>Performance Impact Analysis</CardTitle>
+              <CardTitle>Performance Impact Analysis - Sandboxed vs Native Execution</CardTitle>
+              <CardDescription>As shown, the sandbox is only 0.4ms slower than native execution</CardDescription>
             </CardHeader>
             <CardContent>
               <PerformanceChart />
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                Our evaluation shows that AgentBound - our security sandbox framework - does not imply a performance
+                Our evaluation shows that AgentBound - the security sandbox of GuardiAgent - does not imply a performance
                 overhead. The introduced overhead is negligible in practice.
               </p>
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">

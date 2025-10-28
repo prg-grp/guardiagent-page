@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import dedent from 'dedent-js';
 import { BookOpen, Code as CodeIcon, GitBranch, Terminal } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -39,25 +40,26 @@ export function DeveloperTeaser() {
                   className="p-4 rounded-lg"
                   lang="python"
                   code={[
-                    `import os
+                    dedent`
+                    import os
 
-from agents import Agent
-from mcp_sandbox_openai_sdk import (
-  FSAccess,
-  SandboxedMCPStdio
-)
+                    from agents import Agent
+                    from mcp_sandbox_openai_sdk import (
+                      FSAccess,
+                      SandboxedMCPStdio
+                    )
 
-async def main():
-  async with SandboxedMCPStdio(
-    manifest=manifest,
-    runtime_args=[os.path.abspath("./")],
-    runtime_permissions=[FSAccess(os.path.abspath("./"))],
-  ) as server:
-    agent = Agent(
-      name="MCP Sandbox Test",
-      model="gpt-5-mini",
-      mcp_servers=[server],
-    )`,
+                    async def main():
+                      async with SandboxedMCPStdio(
+                        manifest=manifest,
+                        runtime_args=[os.path.abspath("./")],
+                        runtime_permissions=[FSAccess(os.path.abspath("./"))],
+                      ) as server:
+                        agent = Agent(
+                          name="MCP Sandbox Test",
+                          model="gpt-5-mini",
+                          mcp_servers=[server],
+                        )`,
                   ]}
                 />
               </CardContent>
