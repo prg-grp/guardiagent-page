@@ -6,7 +6,9 @@ import { Code as CodeIcon, Link as LinkIcon } from 'lucide-react';
 import Link from 'next/link';
 
 const CodeAnchor = ({ anchor, children }: { anchor: string; children: React.ReactNode }) => (
-  <Link href={`#${anchor}`}>{children}</Link>
+  <Link href={`#${anchor}`} className="underline decoration-primary decoration-2">
+    {children}
+  </Link>
 );
 
 export default function Devs() {
@@ -46,7 +48,51 @@ export default function Devs() {
       </section>
       <div className="content-grid">
         <section>
-          <h2>Why you need GuardiAgent and AgentBound and how it works</h2>
+          <div className="content container max-w-6xl mx-auto px-4">
+            <h2 className="font-semibold text-center text-4xl">Attack on Titan</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <Card>
+                <CardHeader className="text-xl font-semibold">
+                  <h3>Prevent Mistakes</h3>
+                </CardHeader>
+                <CardContent>
+                  Even well-intentioned MCP servers can contain bugs that lead to unintended consequences. GuardiAgent's
+                  sandbox ensures that configuration errors, coding mistakes, or unexpected behavior can't escalate into
+                  system-wide issues. Catch problems before they impact your production environment.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="text-xl font-semibold">
+                  <h3>Prevent Attacks</h3>
+                </CardHeader>
+                <CardContent>
+                  Malicious actors can compromise MCP servers to exfiltrate data, inject code, or abuse system resources.
+                  AgentBound provides defense-in-depth by isolating each server in a containerized sandbox, preventing
+                  attackers from pivoting to other parts of your infrastructure even if a server is compromised.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="text-xl font-semibold">
+                  <h3>Limit Access</h3>
+                </CardHeader>
+                <CardContent>
+                  Apply the principle of least privilege to your AI agents. Define granular permissions that specify exactly
+                  what files, directories, and network resources each MCP server can access. No more giving blanket access to
+                  your entire filesystem or network.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader className="text-xl font-semibold">
+                  <h3>Users Consent</h3>
+                </CardHeader>
+                <CardContent>
+                  Put your users in control of their data. AgentBound prompts for explicit consent before granting runtime
+                  permissions, ensuring users understand and approve what their AI agents can access. Build trust through
+                  transparency and give users the final say on sensitive access.
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </section>
         <section>
           <div className="content container max-w-6xl mx-auto px-4">
@@ -80,14 +126,14 @@ export default function Devs() {
             <div className="grid grid-cols-2 gap-4">
               <Card>
                 <CardHeader>
-                  <h3>Prerequisities</h3>
+                  <h3 className="text-xl font-semibold">Prerequisities</h3>
                 </CardHeader>
                 <CardContent>
-                  <p>
+                  <p className="mb-4">
                     To create and run this hello world example with an AI agent, make sure you have the following tools and
                     runtimes installed:
                   </p>
-                  <ul>
+                  <ul className="list-disc ml-8 space-y-2">
                     <li>Python &gt; 3.10</li>
                     <li>Docker</li>
                     <li>Optionally, but recommended: &quot;uv&quot; - the Python package manager</li>
@@ -97,9 +143,9 @@ export default function Devs() {
               </Card>
               <Card>
                 <CardHeader>
-                  <h3>Project Setup</h3>
+                  <h3 className="text-xl font-semibold">Project Setup</h3>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="space-y-4">
                   <p>
                     To setup a new project and use the openAI Agent SDK, you'll need to initialize the project and add its
                     dependencies.
@@ -118,9 +164,9 @@ export default function Devs() {
             </div>
             <Card>
               <CardHeader>
-                <h3>Walk-through Example</h3>
+                <h3 className="text-xl font-semibold">Walk-through Example</h3>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <p>
                   Below, there is a ready to run example (with an OpenAI API key), that utilizes the sandbox to encapsulate
                   the official Filesystem MCP server.
@@ -190,20 +236,20 @@ export default function Devs() {
                         asyncio.run(main())
                     `}
                 />
-                <h4>Deep-Dive</h4>
-                <p>
+                <h4 className="font-semibold">Deep-Dive</h4>
+                <p className="text-justify">
                   <CodeAnchor anchor="hello-world-manifest">Lines 14 - 24</CodeAnchor> show how an MCP security manifest can
                   be created inside your own code. The manifests should be part of the MCP server implementation, but since
                   the practice is not yet widespread, you may also create the manifest inside your own code. The manifest (as
                   described below), allows the engineer of an MCP server to define what general intensions the MCP server has
                   - like an Android or iPhone app.
                 </p>
-                <p>
+                <p className="text-justify">
                   <CodeAnchor anchor="hello-world-sandboxmcp">Lines 29 - 33</CodeAnchor> are the heart of the SDK. Instead of
                   using the <code>MCPServerStdio</code> from the OpenAI Agent SDK directly, you must use our wrapper class.
                   This wrapper has the following functions:
                 </p>
-                <ol>
+                <ol className="list-disc ml-8 space-y-2">
                   <li>
                     Takes a list of <code>runtime permissions</code>
                   </li>
@@ -213,7 +259,7 @@ export default function Devs() {
                   </li>
                   <li>Uses Docker to start the MCP server sandboxed with the acknowledged permissions attached</li>
                 </ol>
-                <p>
+                <p className="text-justify">
                   As soon as the <code>async with</code> statement starts the MCP server(s), the user will be asked for each
                   runtime permission, if they want to allow the access or not. This currently happens on the shell and looks
                   like this:
@@ -245,7 +291,7 @@ export default function Devs() {
               <CardHeader>
                 <h3>What a manifest looks like</h3>
               </CardHeader>
-              <CardContent>
+              <CardContent className="space-y-4">
                 <Code
                   className="p-4 rounded-lg"
                   lang="json"
@@ -293,19 +339,84 @@ export default function Devs() {
           </div>
         </section>
         <section>
-          <h2>Runtime Permissions</h2>
+          <div className="content container max-w-6xl mx-auto px-4">
+            <h2 className="font-semibold text-center text-4xl">Runtime Permissions</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <Card>
+                <CardContent>
+                  <h3 className="font-semibold inline-block">FSAccess</h3> - Grant read/write access to specific filesystem
+                  paths. Define exactly which directories or files an MCP server can interact with.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <h3 className="font-semibold inline-block">EnvironmentVariable</h3> - Allow access to specific environment
+                  variables by name. Control which configuration values the server can read.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <h3 className="font-semibold inline-block">DomainPort</h3> - Enable network access to specific domains and
+                  ports. Restrict outbound connections to approved external services.
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent>
+                  <h3 className="font-semibold inline-block">HostPort</h3> - Allow network access to IP addresses and ports.
+                  Define precise network endpoints the server can communicate with.
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </section>
         <section>
-          <h2>Sandboxed Container Images</h2>
-        </section>
-        <section>
-          <h2>Multi-Server Orchestration</h2>
-        </section>
-        <section>
-          <h2>Advanced Integration Topics</h2>
-        </section>
-        <section>
-          <h2>Autogenerate Server Manifest</h2>
+          <div className="content container max-w-6xl mx-auto px-4">
+            <h2 className="font-semibold text-center text-4xl">Sandboxed Container Images</h2>
+            <p>
+              The sandbox currently works with Docker underneath. There is a base image that you can use to create your own
+              customized runtime image. The custom entrypoint performs the following tasks:
+            </p>
+            <ol className="list-decimal ml-4 space-y-2">
+              <li>Check setup variables</li>
+              <li>Download and setup the server package</li>
+              <li>Check hostnames and setup iptables</li>
+              <li>Execute the MCP server</li>
+            </ol>
+            <p>The following configuration environment variables are available during setup:</p>
+            <ul className="list-disc ml-8 space-y-2">
+              <li>
+                <code>PRE_INSTALLED</code>: Skip package installation and use a pre-installed/mounted MCP server. Requires{' '}
+                <code>EXE</code> to be set.
+              </li>
+              <li>
+                <code>RUNTIME</code>: Specifies the package manager runtime, either &quot;pypi&quot; for Python packages or
+                &quot;npm&quot; for Node.js packages.
+              </li>
+              <li>
+                <code>PACKAGE</code>: The name of the MCP server package to install from the specified registry (npm or
+                PyPI).
+              </li>
+              <li>
+                <code>EXE</code>: The command to execute the MCP server. Required when <code>PRE_INSTALLED</code> is set,
+                otherwise auto-configured.
+              </li>
+              <li>
+                <code>ALLOWED_EGRESS</code>: Space or comma-separated list of allowed outbound connections in
+                &quot;host:port&quot; or &quot;ip:port&quot; format. Empty by default (no outbound access).
+              </li>
+              <li>
+                <code>EXTRA_DNS</code>: Additional DNS servers to allow for resolution beyond those in /etc/resolv.conf.
+              </li>
+              <li>
+                <code>ALLOW_LOOPBACK</code>: Enable loopback traffic (localhost). Defaults to &quot;1&quot; (enabled). Set to
+                &quot;0&quot; to disable.
+              </li>
+            </ul>
+            <p>
+              Note that after the download of the server package from the official package repository, only outbound
+              connections allowed by DOMAIN/PORT or IP/PORT are possible. IPTABLES will block everything else.
+            </p>
+          </div>
         </section>
       </div>
     </>
