@@ -35,7 +35,7 @@ export function ResearcherTeaser() {
               </span>
               <span className="font-semibold">Security and Efficiency</span>
               <span>
-                Effectively mitigate malicious behavour in MCP servers such as: data exfiltration and external resource
+                Effectively mitigate malicious behaviour in MCP servers such as: data exfiltration and external resource
                 attacks.
               </span>
             </div>

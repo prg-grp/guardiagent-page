@@ -1,8 +1,8 @@
 import { Code } from '@/components/code';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import dedent from 'dedent-js';
-import { Code as CodeIcon, Link as LinkIcon } from 'lucide-react';
+import { Code as CodeIcon, HeartCrack, Link as LinkIcon, ScanEye, ShieldAlert, UserCheck } from 'lucide-react';
 import Link from 'next/link';
 
 const CodeAnchor = ({ anchor, children }: { anchor: string; children: React.ReactNode }) => (
@@ -52,8 +52,11 @@ export default function Devs() {
             <h2 className="font-semibold text-center text-4xl">Attack on Titan</h2>
             <div className="grid grid-cols-2 gap-4">
               <Card>
-                <CardHeader className="text-xl font-semibold">
-                  <h3>Prevent Mistakes</h3>
+                <CardHeader>
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                    <HeartCrack className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">Prevent Mistakes</CardTitle>
                 </CardHeader>
                 <CardContent>
                   Even well-intentioned MCP servers can contain bugs that lead to unintended consequences. GuardiAgent's
@@ -63,7 +66,10 @@ export default function Devs() {
               </Card>
               <Card>
                 <CardHeader className="text-xl font-semibold">
-                  <h3>Prevent Attacks</h3>
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                    <ShieldAlert className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">Prevent Attacks</CardTitle>
                 </CardHeader>
                 <CardContent>
                   Malicious actors can compromise MCP servers to exfiltrate data, inject code, or abuse system resources.
@@ -73,7 +79,10 @@ export default function Devs() {
               </Card>
               <Card>
                 <CardHeader className="text-xl font-semibold">
-                  <h3>Limit Access</h3>
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                    <ScanEye className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">Limit Access</CardTitle>
                 </CardHeader>
                 <CardContent>
                   Apply the principle of least privilege to your AI agents. Define granular permissions that specify exactly
@@ -83,7 +92,10 @@ export default function Devs() {
               </Card>
               <Card>
                 <CardHeader className="text-xl font-semibold">
-                  <h3>Users Consent</h3>
+                  <div className="p-3 bg-primary/10 rounded-lg w-fit mb-4">
+                    <UserCheck className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-xl">Users Consent</CardTitle>
                 </CardHeader>
                 <CardContent>
                   Put your users in control of their data. AgentBound prompts for explicit consent before granting runtime
@@ -241,7 +253,7 @@ export default function Devs() {
                   <CodeAnchor anchor="hello-world-manifest">Lines 14 - 24</CodeAnchor> show how an MCP security manifest can
                   be created inside your own code. The manifests should be part of the MCP server implementation, but since
                   the practice is not yet widespread, you may also create the manifest inside your own code. The manifest (as
-                  described below), allows the engineer of an MCP server to define what general intensions the MCP server has
+                  described below), allows the engineer of an MCP server to define what general intentions the MCP server has
                   - like an Android or iPhone app.
                 </p>
                 <p className="text-justify">

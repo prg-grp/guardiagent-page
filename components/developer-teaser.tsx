@@ -31,13 +31,13 @@ export function DeveloperTeaser() {
                   Quick Start Integration
                 </CardTitle>
                 <CardDescription className="text-slate-400">
-                  Wrap your MCP server with the GuardiAgent sandbox in seconds. Seemlessly integrate with the OpenAI Agent
+                  Wrap your MCP server with the GuardiAgent sandbox in seconds. Seamlessly integrate with the OpenAI Agent
                   SDK.
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex grow">
                 <Code
-                  className="p-4 rounded-lg"
+                  className="p-4 rounded-lg w-full h-full"
                   lang="python"
                   code={[
                     dedent`
@@ -53,7 +53,9 @@ export function DeveloperTeaser() {
                       async with SandboxedMCPStdio(
                         manifest=manifest,
                         runtime_args=[os.path.abspath("./")],
-                        runtime_permissions=[FSAccess(os.path.abspath("./"))],
+                        runtime_permissions=[
+                          FSAccess(os.path.abspath("./"))
+                        ],
                       ) as server:
                         agent = Agent(
                           name="MCP Sandbox Test",
