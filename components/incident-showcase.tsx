@@ -43,7 +43,7 @@ export function IncidentShowcase() {
             </div>
             <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">When AI Agents Go Rogue</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed">
-              What happens, if your agentic AI software has unrestricted priviledges on your machine?
+              What happens, if your agentic AI software has unrestricted privileges on your machine?
             </p>
           </div>
 

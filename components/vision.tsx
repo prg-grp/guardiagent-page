@@ -19,7 +19,7 @@ const features = [
     icon: UserCheck2,
     title: 'User-Consent First',
     description:
-      'The user decides, what the software is allowed to access and do. No surprising network calls to dubious websites.',
+      'The user decides what the software is allowed to access and do. No surprising network calls to dubious websites.',
   },
   {
     icon: BrainCog,

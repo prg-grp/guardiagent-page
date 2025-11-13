@@ -35,7 +35,7 @@ export function ResearcherTeaser() {
               </span>
               <span className="font-semibold">Security and Efficiency</span>
               <span>
-                Effectively mitigate malicious behavor in MCP servers such as: data exfiltration and external resource
+                Effectively mitigate malicious behavour in MCP servers such as: data exfiltration and external resource
                 attacks.
               </span>
             </div>
@@ -53,8 +53,8 @@ export function ResearcherTeaser() {
                 overhead. The introduced overhead is negligible in practice.
               </p>
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                The diagram shows the the comparison between the runtime of the four most prevalent MCP server operations,
-                when executed with and without the sandbox, on two hardware environments, i.e., macOS and Debian. The sandbox
+                The diagram shows the comparison between the runtime of the four most prevalent MCP server operations, when
+                executed with and without the sandbox, on two hardware environments, i.e., macOS and Debian. The sandbox
                 adds, on average, across all operations, 0.6 ms on macOS and 0.29 ms on Debian, both essentially negligible.
               </p>
             </CardContent>
