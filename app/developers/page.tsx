@@ -38,8 +38,8 @@ export default function Devs() {
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
-              Use the AgentBound Framework - part of GuardiAgent - to secure your AI Agent. Encapsulate the least common
-              denominator in agentic software: the MCP server.
+              Use the GuardiAgent Framework to secure your AI Agent. Encapsulate the least common denominator in agentic
+              software: the MCP server.
             </p>
           </div>
         </div>
@@ -73,7 +73,7 @@ export default function Devs() {
                 </CardHeader>
                 <CardContent>
                   Malicious actors can compromise MCP servers to exfiltrate data, inject code, or abuse system resources.
-                  AgentBound provides defense-in-depth by isolating each server in a containerized sandbox, preventing
+                  GuardiAgent provides defense-in-depth by isolating each server in a containerized sandbox, preventing
                   attackers from pivoting to other parts of your infrastructure even if a server is compromised.
                 </CardContent>
               </Card>
@@ -98,7 +98,7 @@ export default function Devs() {
                   <CardTitle className="text-xl">Users Consent</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  Put your users in control of their data. AgentBound prompts for explicit consent before granting runtime
+                  Put your users in control of their data. GuardiAgent prompts for explicit consent before granting runtime
                   permissions, ensuring users understand and approve what their AI agents can access. Build trust through
                   transparency and give users the final say on sensitive access.
                 </CardContent>
@@ -110,8 +110,8 @@ export default function Devs() {
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">Quick Start</h2>
             <p>
-              To use the AgentBound Security Sandbox, use the following quick start steps. AgentBound is not dependent on a
-              specific AI framework, it works with all SDKs. However, this quickstart shows how to use AgentBound with the
+              To use the GuardiAgent Security Sandbox, use the following quick start steps. GuardiAgent is not dependent on a
+              specific AI framework, it works with all SDKs. However, this quickstart shows how to use GuardiAgent with the
               OpenAI Agent SDK. Currently, we support the OpenAI Agent SDK out of the box with an SDK specific
               implementation.
             </p>
@@ -131,7 +131,7 @@ export default function Devs() {
                   className="bg-secondary hover:bg-primary/90 ext-secondary-foreground hover:text-primary-foreground cursor-pointer text-lg"
                 >
                   <LinkIcon className="w-5 h-6 mr-2" />
-                  AgentBound OpenAI Agent SDK
+                  GuardiAgent OpenAI Agent SDK
                 </Button>
               </Link>
             </div>
@@ -294,7 +294,7 @@ export default function Devs() {
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">The Security Manifest</h2>
             <p>
-              One key ingredient of the AgentBound framework is the security manifest (in our research, we call it the
+              One key ingredient of the GuardiAgent framework is the security manifest (in our research, we call it the
               policy). It is a JSON file, that is bundled together with the MCP server that defines what general intentions
               an MCP server may have. This defines overarching intentions like file-access or internet access. It is inspired
               by the Android Permissions Manifest for apps.

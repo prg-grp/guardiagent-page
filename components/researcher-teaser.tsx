@@ -49,7 +49,7 @@ export function ResearcherTeaser() {
             <CardContent>
               <PerformanceChart />
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">
-                Our evaluation shows that AgentBound - the security sandbox of GuardiAgent - does not imply a performance
+                Our evaluation shows that GuardiAgent - the security sandbox of GuardiAgent - does not imply a performance
                 overhead. The introduced overhead is negligible in practice.
               </p>
               <p className="text-sm text-muted-foreground mt-4 leading-relaxed">

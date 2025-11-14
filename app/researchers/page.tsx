@@ -36,7 +36,7 @@ export default function Researchers() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-2 text-balance">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">AgentBound:</span>{' '}
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">GuardiAgent:</span>{' '}
               Securing Execution Boundaries of AI Agents
             </h1>
 
@@ -49,7 +49,7 @@ export default function Researchers() {
 
             <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
               Large language models have evolved into AI agents that interact with external tools and environments.
-              AgentBound is the first access‑control framework for MCP servers, securing these interactions without
+              GuardiAgent is the first access‑control framework for MCP servers, securing these interactions without
               compromising efficiency.
             </p>
           </div>
@@ -65,9 +65,9 @@ export default function Researchers() {
               <Card className="border-l-4 border-l-primary">
                 <CardHeader className="font-bold text-primary text-xl">Access Control Policy</CardHeader>
                 <CardContent>
-                  AgentBound introduces an access control policy mechanism for Model Context Protocol (MCP) servers, inspired
-                  by the Android permission model. Permissions are specified via manifest files that express required
-                  privileges.
+                  GuardiAgent introduces an access control policy mechanism for Model Context Protocol (MCP) servers,
+                  inspired by the Android permission model. Permissions are specified via manifest files that express
+                  required privileges.
                 </CardContent>
               </Card>
               <Card className="border-l-4 border-l-primary">
@@ -81,9 +81,10 @@ export default function Researchers() {
               <Card className="border-l-4 border-l-primary">
                 <CardHeader className="font-bold text-primary text-xl">Security and Efficiency</CardHeader>
                 <CardContent>
-                  AgentBound's policy enforcement engine effectively mitigates malicious behaviours such as external resource
-                  attacks and data exfiltration while introducing only a small runtime overhead. On average, it adds about
-                  0.6 ms per request, demonstrating that strong isolation can be achieved with negligible performance cost.
+                  GuardiAgent's policy enforcement engine effectively mitigates malicious behaviours such as external
+                  resource attacks and data exfiltration while introducing only a small runtime overhead. On average, it adds
+                  about 0.6 ms per request, demonstrating that strong isolation can be achieved with negligible performance
+                  cost.
                 </CardContent>
               </Card>
             </div>
@@ -101,17 +102,17 @@ export default function Researchers() {
             </p>
             <p>
               Unlike mature ecosystems that pair system permissions with enforced runtime behaviour, the MCP specification
-              focuses only on the communication protocol. AgentBound closes this gap by bringing principled access control to
-              the MCP servers. It guarantees that they comply with the manifest and blocks any unauthorised access, thereby
-              preserving the boundary between the MCP server and the host system.
+              focuses only on the communication protocol. GuardiAgent closes this gap by bringing principled access control
+              to the MCP servers. It guarantees that they comply with the manifest and blocks any unauthorised access,
+              thereby preserving the boundary between the MCP server and the host system.
             </p>
           </div>
         </section>
         <section>
           <div className="content container max-w-6xl mx-auto px-4">
-            <h2 className="font-semibold text-center text-4xl">How AgentBound Works</h2>
+            <h2 className="font-semibold text-center text-4xl">How GuardiAgent Works</h2>
             <p>
-              AgentBound enforces each MCP server with a manifest that declares the operations it can perform (e.g., read
+              GuardiAgent enforces each MCP server with a manifest that declares the operations it can perform (e.g., read
               file, write file, fetch URL). At runtime, the policy enforcement engine guarantees the behaviour of the MCP
               server. Only calls that conform to the manifest are executed; all others are blocked, preventing capability
               escalation and data leakage.
@@ -119,17 +120,18 @@ export default function Researchers() {
             <div className="text-center">
               <Image
                 src="/framework.svg"
-                alt="AgentBound framework architecture"
+                alt="GuardiAgent framework architecture"
                 width={1024}
                 height={350}
                 className="rounded inline-block"
               />
             </div>
             <p>
-              To simplify adoption, AgentBound can automatically generate manifests from existing server source code. The MCP
-              servers do not need any modifications to run with AgentBound. Developers can review and refine these manifests,
-              but our study shows that the automatically generated policies are largely correct and approved by developers.
-              This approach lowers the barrier to securing the vast ecosystem of MCP servers with limited human intervention.
+              To simplify adoption, GuardiAgent can automatically generate manifests from existing server source code. The
+              MCP servers do not need any modifications to run with GuardiAgent. Developers can review and refine these
+              manifests, but our study shows that the automatically generated policies are largely correct and approved by
+              developers. This approach lowers the barrier to securing the vast ecosystem of MCP servers with limited human
+              intervention.
             </p>
           </div>
         </section>
@@ -137,7 +139,7 @@ export default function Researchers() {
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">Evaluation &amp; Results</h2>
             <p>
-              We evaluated AgentBound on a variety of real‑world MCP servers and malicious workloads. The framework
+              We evaluated GuardiAgent on a variety of real‑world MCP servers and malicious workloads. The framework
               demonstrates strong security guarantees and excellent performance
             </p>
             <Table>
@@ -170,7 +172,7 @@ export default function Researchers() {
               </TableBody>
             </Table>
             <p>
-              These results indicate that AgentBound provides robust protection without sacrificing responsiveness. By
+              These results indicate that GuardiAgent provides robust protection without sacrificing responsiveness. By
               injecting a lightweight enforcement layer, developers can adopt a least‑privilege security model for AI agents
               with minimal effort.
             </p>
@@ -179,7 +181,7 @@ export default function Researchers() {
         <section>
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">Citation</h2>
-            <p>If you find AgentBound useful in your research or projects, please consider citing our paper</p>
+            <p>If you find GuardiAgent useful in your research or projects, please consider citing our paper</p>
             <Card className="relative">
               <CardContent>
                 <CopyToClipboardButton

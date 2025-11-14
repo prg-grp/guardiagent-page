@@ -67,7 +67,7 @@ export function NewsletterSection() {
                       />
                       <label htmlFor="product" className="text-sm cursor-pointer">
                         <span className="font-semibold">Software News</span> - New features, releases, and technical updates
-                        of GuardiAgent and AgentBound
+                        of GuardiAgent and GuardiAgent
                       </label>
                     </div>
                   </div>
