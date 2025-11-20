@@ -33,8 +33,9 @@ export default function Devs() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 text-balance">
-              How to use{' '}
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">AgendBound</span>
+              How to use the{' '}
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">GuardiAgent</span>{' '}
+              Framework
             </h1>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
@@ -116,7 +117,7 @@ export default function Devs() {
               implementation.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="https://github.com/guardiAgent/docker-mcp-sandbox/" target="_blank" className="flex">
+              <Link href="https://github.com/GuardiAgent/docker-mcp-sandbox/" target="_blank" className="flex">
                 <Button
                   size="lg"
                   className="bg-secondary hover:bg-primary/90 ext-secondary-foreground hover:text-primary-foreground cursor-pointer text-lg"

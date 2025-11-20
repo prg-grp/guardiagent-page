@@ -1,4 +1,3 @@
-import { CopyToClipboardButton } from '@/components/copy-to-clipboard';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { GraduationCap } from 'lucide-react';
@@ -36,16 +35,9 @@ export default function Researchers() {
             </div>
 
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-2 text-balance">
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">GuardiAgent:</span>{' '}
-              Securing Execution Boundaries of AI Agents
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary">GuardiAgent</span>{' '}
+              Securing AI Agent Execution
             </h1>
-
-            <ol className="mb-6 flex justify-center space-x-4 text-slate-400">
-              <li>Christoph Bühler</li>
-              <li>Matteo Biagiola</li>
-              <li>Luca Di Grazia</li>
-              <li>Guido Salvaneschi</li>
-            </ol>
 
             <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
               Large language models have evolved into AI agents that interact with external tools and environments.
@@ -178,7 +170,7 @@ export default function Researchers() {
             </p>
           </div>
         </section>
-        <section>
+        {/* <section>
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">Citation</h2>
             <p>If you find GuardiAgent useful in your research or projects, please consider citing our paper</p>
@@ -194,7 +186,7 @@ export default function Researchers() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </section> */}
       </div>
     </>
   );

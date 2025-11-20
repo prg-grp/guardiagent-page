@@ -19,10 +19,10 @@ export function Navigation() {
             Vision
           </Link>
           <Link href="/developers" className="text-foreground hover:text-primary transition-colors">
-            Developers
+            For Developers
           </Link>
           <Link href="/researchers" className="text-foreground hover:text-primary transition-colors">
-            Research
+            Our Research
           </Link>
           <Link href="/#newsletter" className="text-foreground hover:text-primary transition-colors">
             <Button className="cursor-pointer" size="sm">
