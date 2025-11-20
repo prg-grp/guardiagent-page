@@ -51,7 +51,7 @@ export function Footer() {
                 <Link href="https://programming-group.com" target="_blank" className="hover:text-primary transition-colors">
                   <Globe className="h-5 w-5" />
                 </Link>
-                <Link href="mailto:guardiagent@programming-group.com" className="hover:text-primary transition-colors">
+                <Link href="mailto:info@guardiagent.com" className="hover:text-primary transition-colors">
                   <Mail className="h-5 w-5" />
                 </Link>
               </div>
