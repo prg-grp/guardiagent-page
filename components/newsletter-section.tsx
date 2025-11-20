@@ -42,6 +42,22 @@ export function NewsletterSection() {
                     className="h-12 text-lg"
                   />
                 </div>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input
+                    id="firstname"
+                    name="firstname"
+                    type="text"
+                    placeholder="Optionally add your firstname"
+                    className="h-12 text-lg"
+                  />
+                  <Input
+                    id="lastname"
+                    name="lastname"
+                    type="text"
+                    placeholder="Optionally add your lastname"
+                    className="h-12 text-lg"
+                  />
+                </div>
 
                 <div className="space-y-3">
                   <p className="font-semibold text-sm">I'm interested in:</p>
