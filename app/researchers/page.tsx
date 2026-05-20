@@ -1,16 +1,25 @@
+import { CopyToClipboardButton } from '@/components/copy-to-clipboard';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { GraduationCap } from 'lucide-react';
 import Image from 'next/image';
 
-const citation = `@article{bühler2025securingaiagentexecution,
-    title={Securing AI Agent Execution},
-    author={Christoph Bühler and Matteo Biagiola and Luca Di Grazia and Guido Salvaneschi},
-    year={2025},
-    eprint={2510.21236},
-    archivePrefix={arXiv},
-    primaryClass={cs.CR},
-    url={https://arxiv.org/abs/2510.21236},
+const citation = `@inproceedings{buehler2026AgentBound,
+  title = {{{AgentBound}}: {{Securing}} Execution Boundaries of {{AI}} Agents},
+  booktitle = {Proceedings of the 34th {{ACM}} Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering ({{FSE}})},
+  author = {Bühler, Christoph and Biagiola, Matteo and Di Grazia, Luca and Salvaneschi, Guido},
+  date = {2026-07},
+  series = {2026},
+  volume = {3},
+  pages = {24},
+  publisher = {ACM},
+  address = {New York, NY, USA},
+  location = {Montreal, Canada},
+  doi = {10.1145/3808103},
+  acronym = {FSE},
+  articleno = {FSE096},
+  issue = {FSE},
+  supp = {https://doi.org/10.5281/zenodo.19571298}
 }`;
 
 export default function Researchers() {
@@ -170,7 +179,7 @@ export default function Researchers() {
             </p>
           </div>
         </section>
-        {/* <section>
+        <section>
           <div className="content container max-w-6xl mx-auto px-4">
             <h2 className="font-semibold text-center text-4xl">Citation</h2>
             <p>If you find GuardiAgent useful in your research or projects, please consider citing our paper</p>
@@ -182,11 +191,11 @@ export default function Researchers() {
                   onCopiedTrueClassName="bg-primary text-primary-foreground border-primary"
                   onCopiedFalseClassName="bg-neutral-50 text-black border-neutral-200"
                 />
-                <pre>{citation}</pre>
+                <pre className="text-wrap">{citation}</pre>
               </CardContent>
             </Card>
           </div>
-        </section> */}
+        </section>
       </div>
     </>
   );
