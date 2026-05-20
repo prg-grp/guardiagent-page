@@ -1,4 +1,4 @@
-import { Github, Globe, Mail, Shield } from 'lucide-react';
+import { Github, Globe, Linkedin, Mail, Shield } from 'lucide-react';
 import Link from 'next/link';
 
 export function Footer() {
@@ -53,6 +53,13 @@ export function Footer() {
                 </Link>
                 <Link href="mailto:info@guardiagent.com" className="hover:text-primary transition-colors">
                   <Mail className="h-5 w-5" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/showcase/guardiagent"
+                  target="_blank"
+                  className="hover:text-primary transition-colors"
+                >
+                  <Linkedin className="h-5 w-5" />
                 </Link>
               </div>
             </div>
