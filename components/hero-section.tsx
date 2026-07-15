@@ -30,7 +30,7 @@ export function HeroSection() {
           </h1>
 
           <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto text-pretty leading-relaxed">
-            Make your AI application more secure. Guard your system against data exfiltration and system attacks by securing
+            Make your agentic workflow more secure. Guard your system against data exfiltration and system attacks by securing
             your Model Context Protocol (MCP) servers.
           </p>
 
