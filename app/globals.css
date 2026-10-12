@@ -37,6 +37,13 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #e2e8f0;
   --sidebar-ring: rgba(6, 182, 212, 0.5);
+  /* Research pillars: AgentBound prevents (teal), AgentSpy observes (violet). Always pair with an icon + label. */
+  --bound: #0f766e;
+  --bound-soft: #5eead4;
+  --spy: #6d28d9;
+  --spy-soft: #c4b5fd;
+  --alert: #b45309;
+  --alert-soft: #fcd34d;
 }
 
 .dark {
@@ -72,6 +79,12 @@
   --sidebar-accent-foreground: #0f172a;
   --sidebar-border: #334155;
   --sidebar-ring: rgba(34, 211, 238, 0.5);
+  --bound: #2dd4bf;
+  --bound-soft: #5eead4;
+  --spy: #a78bfa;
+  --spy-soft: #c4b5fd;
+  --alert: #fbbf24;
+  --alert-soft: #fcd34d;
 }
 
 @theme inline {
@@ -113,6 +126,12 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --color-bound: var(--bound);
+  --color-bound-soft: var(--bound-soft);
+  --color-spy: var(--spy);
+  --color-spy-soft: var(--spy-soft);
+  --color-alert: var(--alert);
+  --color-alert-soft: var(--alert-soft);
 }
 
 @layer base {
@@ -230,6 +249,8 @@
   animation: slide-in-right 0.8s ease-out;
 }
 
-html {
-  scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }

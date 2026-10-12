@@ -5,6 +5,7 @@ import {
   transformerNotationDiff,
   transformerNotationHighlight,
 } from '@shikijs/transformers';
+import { cn } from '@/lib/utils';
 import type { BundledLanguage, BundledTheme } from 'shiki';
 import { codeToHtml } from 'shiki';
 
@@ -14,6 +15,7 @@ type CodeBlocksProps = {
   className?: string;
   lang?: BundledLanguage;
   theme?: BundledTheme;
+  wrap?: boolean;
 };
 
 const anchorTransformer = createCommentNotationTransformer(
@@ -35,6 +37,7 @@ export async function Code({
   showLineNumbers = false,
   lang = 'javascript',
   theme = 'dark-plus',
+  wrap = false,
 }: CodeBlocksProps) {
   const codes = typeof code === 'string' ? [code] : code;
   const html = await codeToHtml(codes.join('\n'), {
@@ -43,9 +46,13 @@ export async function Code({
     transformers: [transformerNotationDiff(), transformerNotationHighlight(), anchorTransformer],
   });
   return (
-    <div className={`bg-[#1e1e1e] max-w-full ${className}`}>
+    <div className={cn('max-w-full bg-[#1e1e1e]', className)}>
       <div
-        className={`overflow-auto w-full ${showLineNumbers ? 'line-numbers' : ''}`}
+        className={cn(
+          'w-full overflow-auto',
+          showLineNumbers && 'line-numbers',
+          wrap && '[&_pre]:whitespace-pre-wrap [&_pre]:wrap-break-word'
+        )}
         dangerouslySetInnerHTML={{ __html: html }}
       ></div>
     </div>

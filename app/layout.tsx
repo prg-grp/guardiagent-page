@@ -8,10 +8,22 @@ import type { Metadata } from 'next';
 import type React from 'react';
 import './globals.css';
 
+const description =
+  'Research on AI agent security from the University of St. Gallen. AgentBound (ACM FSE 2026) bounds what MCP servers can access; AgentSpy (arXiv 2026) records what agents actually do at the operating-system level.';
+
 export const metadata: Metadata = {
-  title: 'GuardiAgent - Secure Agentic AI',
-  description:
-    'Runtime security for AI agents and Model Context Protocol servers. Prevent data exfiltration, tool poisoning, and system attacks.',
+  metadataBase: new URL('https://guardiagent.com'),
+  title: {
+    default: 'GuardiAgent: Bound and observe AI agents',
+    template: '%s · GuardiAgent',
+  },
+  description,
+  openGraph: {
+    type: 'website',
+    siteName: 'GuardiAgent',
+    title: 'GuardiAgent: Bound and observe AI agents',
+    description,
+  },
 };
 
 export default function RootLayout({
